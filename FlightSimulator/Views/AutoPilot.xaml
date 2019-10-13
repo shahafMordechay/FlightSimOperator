@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="FlightSimulator.Views.AutoPilot"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBox Name="TextBlock" Text="{Binding Commands, UpdateSourceTrigger=PropertyChanged}" Background="{Binding Background,
+                UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" FontWeight="Bold" FontSize="16" AcceptsReturn="True" TextWrapping="Wrap" >
+            </TextBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <WrapPanel HorizontalAlignment="Center" >
+                <Button x:Name="OK" Command="{Binding OkCommand}" FontWeight="Bold" Margin="0 15 5 0" Content="OK" Padding="5 5 5 5" Background="Chocolate"/>
+                <Button x:Name="Clear" Command="{Binding ClearCommand}" FontWeight="Bold" Margin="5 15 0 0" Content="Clear" Padding="5 5 5 5" Background="Chocolate"/>
+            </WrapPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>
